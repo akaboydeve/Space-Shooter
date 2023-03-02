@@ -33,8 +33,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && (Time.time > nextFire))
         {
-            nextFire = fireRate + Time.time;
-            Instantiate(laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+            FireLaser();
         }
 
     }
@@ -76,6 +75,12 @@ public class Player : MonoBehaviour
             _spawnManager.OnPlayerDeath();
 
         }
+    }
+
+    public void FireLaser()
+    {
+        nextFire = fireRate + Time.time;
+        Instantiate(laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
     }
 
 }
