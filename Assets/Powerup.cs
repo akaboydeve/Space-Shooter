@@ -36,12 +36,11 @@ public class Powerup : MonoBehaviour
                         player.SpeedBoostActive();
                         break;
                     case 2:
+                        player.ShieldActive();
                         break;
                     default:
-                        Debug.Log("PowerUp not Defined");
+                        Debug.Log("PowerUpID not Defined");
                         break;
-
-
                 }
 
             }
