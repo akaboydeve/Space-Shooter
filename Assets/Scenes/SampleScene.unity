@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22c42124c753534687ab3711caf7341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 5
   laserPrefab: {fileID: 7574164867966814417, guid: 96e31fcac36ca56459db82881e1df8d4, type: 3}
   _tripleShotPrefab: {fileID: 2200427190924994358, guid: 34ec8d8c3f4e90745a539a6e42af15c1, type: 3}
   fireRate: 0.15
@@ -210,6 +210,7 @@ MonoBehaviour:
   Lives: 3
   _spawnManager: {fileID: 718433100}
   _isTripleShotActive: 0
+  _speedMultiplier: 3
 --- !u!212 &648799250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -486,7 +487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 7724771324445628161, guid: 3de0cf329a384f049854232238390e99, type: 3}
   _enemyContainer: {fileID: 2129407918}
-  _tripleShotPowerupPrefab: {fileID: 7051712574062955197, guid: 1fa049641d952c94e82fa7f376f40474, type: 3}
+  powerups:
+  - {fileID: 7051712574062955197, guid: 1fa049641d952c94e82fa7f376f40474, type: 3}
+  - {fileID: 1420595918015485586, guid: 121e7707009f9c74b8e763f94ea8e5bc, type: 3}
   isPlayerAlive: 1
 --- !u!4 &718433101
 Transform:

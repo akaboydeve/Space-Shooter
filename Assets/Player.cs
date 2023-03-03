@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 5f;
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private GameObject _tripleShotPrefab;
     [SerializeField] private float fireRate = 0.1f;
@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float Lives = 3;
     [SerializeField] private SpawnManager _spawnManager;
     [SerializeField] private bool _isTripleShotActive = false;
+    [SerializeField] private float _speedMultiplier = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
 
         CalculateMovement();
 
-        if (Input.GetKeyDown(KeyCode.Space) && (Time.time > nextFire))
+        if ((Input.GetKeyDown(KeyCode.Space)) && (Time.time > nextFire))
         {
             FireLaser();
         }
@@ -89,12 +90,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SpeedBoostActive()
+    {
+        speed *= _speedMultiplier;
+        StartCoroutine(SpeedBoostDownRoutine());
+    }
     public void TripleShotActive()
     {
         _isTripleShotActive = true;
         StartCoroutine(TripleShotPowerDownRoutine());
     }
 
+    IEnumerator SpeedBoostDownRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        speed /= _speedMultiplier;
+    }
     IEnumerator TripleShotPowerDownRoutine()
     {
         yield return new WaitForSeconds(5.0f);

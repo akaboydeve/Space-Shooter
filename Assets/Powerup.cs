@@ -5,11 +5,7 @@ using UnityEngine;
 public class Powerup : MonoBehaviour
 {
     [SerializeField] private float _speed = 3;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    [SerializeField] private int _PowerUpId;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +25,25 @@ public class Powerup : MonoBehaviour
             Player player = other.transform.GetComponent<Player>();
             if (player != null)
             {
-                player.TripleShotActive();
+
+                switch (_PowerUpId)
+                {
+
+                    case 0:
+                        player.TripleShotActive();
+                        break;
+                    case 1:
+                        player.SpeedBoostActive();
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        Debug.Log("PowerUp not Defined");
+                        break;
+
+
+                }
+
             }
             Destroy(this.gameObject);
         }
