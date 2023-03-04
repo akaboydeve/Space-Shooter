@@ -17,10 +17,12 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject ShieldVisualizer;
     [SerializeField] private int _score=0;
     [SerializeField] private UIManager _UIManager;
-
+    [SerializeField] private GameObject _leftEngineFire, _rightEngineFire;
     // Start is called before the first frame update
     void Start()
     {
+        _leftEngineFire.SetActive(false);
+        _rightEngineFire.SetActive(false);
         transform.position = new Vector3(0, 0, 0);
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         _UIManager =GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -97,6 +99,17 @@ public class Player : MonoBehaviour
             return;
         }
         Lives--;
+        if(Lives ==2)
+        {
+            _rightEngineFire.SetActive(true);
+        }
+        else if (Lives ==1)
+        {
+            _leftEngineFire.SetActive(true);
+        }
+        {
+
+        }
         _UIManager.UpdateLives(Lives);
         if (Lives <= 0)
         {
