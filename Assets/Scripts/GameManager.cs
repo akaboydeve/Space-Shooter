@@ -6,8 +6,14 @@ public class GameManager : MonoBehaviour
 {
     private bool _isGameOver = false;
     // Start is called before the first frame update
-    
 
+    [SerializeField]private int targetFrameRate = 60;
+
+    private void Start()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = targetFrameRate;
+    }
     // Update is called once per frame
     void Update()
     {
