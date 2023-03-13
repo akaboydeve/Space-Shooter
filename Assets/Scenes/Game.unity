@@ -392,6 +392,7 @@ MonoBehaviour:
   _leftEngineFire: {fileID: 1182135626}
   _rightEngineFire: {fileID: 997420140}
   _laserAudioClip: {fileID: 8300000, guid: 75676f361bdfeaf41a46623e95df3dbc, type: 3}
+  _explosionPrefab: {fileID: 6649606487780044145, guid: a7b5f8ad5c88d7042a840aab2e104ad2, type: 3}
 --- !u!212 &648799250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2053,8 +2054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 232, y: -116}
-  m_SizeDelta: {x: 256, y: 128}
+  m_AnchoredPosition: {x: 373, y: -188}
+  m_SizeDelta: {x: 512, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1693102328
 GameObject:
@@ -2113,7 +2114,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5ee343246919d2b4bba63ae629e95494, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

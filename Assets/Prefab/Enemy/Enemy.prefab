@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  _enemyLaserPrefab: {fileID: 5286072832326620544, guid: 7c81d41ac24c52941a5cf02765d366f0, type: 3}
 --- !u!95 &4245041305835177639
 Animator:
   serializedVersion: 6

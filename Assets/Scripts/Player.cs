@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private UIManager _UIManager;
     [SerializeField] private GameObject _leftEngineFire, _rightEngineFire;
     [SerializeField] private AudioClip _laserAudioClip;
+    [SerializeField] private GameObject _explosionPrefab;
     private AudioSource _audioSource;
 
 
@@ -128,8 +129,9 @@ public class Player : MonoBehaviour
         _UIManager.UpdateLives(Lives);
         if (Lives <= 0)
         {
-            Destroy(this.gameObject);
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             _spawnManager.OnPlayerDeath();
+            Destroy(this.gameObject);
 
         }
     }
